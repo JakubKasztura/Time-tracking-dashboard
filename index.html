@@ -9,23 +9,110 @@
     <meta name="keywords" content="Time, Track, Tracking, Dashobard, Report" />
     <meta name="author" content="jkDev" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <title>Time tracking dashboard</title>
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="/images/favicon-32x32.png"
+      href="images/favicon-32x32.png"
     />
-
-    <title>Time tracking dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
-    <!-- <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
-    </div> -->
+    <div class="wrapper">
+      <header class="menu">
+        <section class="menu__item">
+          <div class="menu__img-container">
+            <img
+              src="images/image-jeremy.png"
+              alt="Image of Jeremy Robson"
+              class="author-img"
+            />
+          </div>
+          <p class="menu__info">Report for</p>
+          <h1 class="menu__author">Jeremy Robson</h1>
+        </section>
+        <nav class="menu__item main-nav">
+          <ul class="main-nav__list">
+            <li class="main-nav__item">Daily</li>
+            <li class="main-nav__item">Weekly</li>
+            <li class="main-nav__item">Monthly</li>
+          </ul>
+        </nav>
+      </header>
+      <main class="dashboard">
+        <section class="dashboard__item dashboard-work">
+          <div class="dashboard__background"></div>
+          <article class="dashboard__body">
+            <h2 class="dashboard__title"></h2>
+            <div class="dashboard__action"></div>
+            <p class="dashboard__data"></p>
+            <p class="dashboard__data-info"></p>
+          </article>
+        </section>
+        <section class="dashboard__item dashboard-play">
+          <div class="dashboard__background"></div>
+          <article class="dashboard__body">
+            <h2 class="dashboard__title"></h2>
+            <div class="dashboard__action"></div>
+            <p class="dashboard__data"></p>
+            <p class="dashboard__data-info"></p>
+          </article>
+        </section>
+        <section class="dashboard__item dashboard-study">
+          <div class="dashboard__background"></div>
+          <article class="dashboard__body">
+            <h2 class="dashboard__title"></h2>
+            <div class="dashboard__action"></div>
+            <p class="dashboard__data"></p>
+            <p class="dashboard__data-info"></p>
+          </article>
+        </section>
+        <section class="dashboard__item dashboard-exercise">
+          <div class="dashboard__background"></div>
+          <article class="dashboard__body">
+            <h2 class="dashboard__title"></h2>
+            <div class="dashboard__action"></div>
+            <p class="dashboard__data"></p>
+            <p class="dashboard__data-info"></p>
+          </article>
+        </section>
+        <section class="dashboard__item dashboard-social">
+          <div class="dashboard__background"></div>
+          <article class="dashboard__body">
+            <h2 class="dashboard__title"></h2>
+            <div class="dashboard__action"></div>
+            <p class="dashboard__data"></p>
+            <p class="dashboard__data-info"></p>
+          </article>
+        </section>
+        <section class="dashboard__item dashboard-self-care">
+          <div class="dashboard__background"></div>
+          <article class="dashboard__body">
+            <h2 class="dashboard__title"></h2>
+            <div class="dashboard__action"></div>
+            <p class="dashboard__data"></p>
+            <p class="dashboard__data-info"></p>
+          </article>
+        </section>
+      </main>
+      <footer class="footer">
+        Project from
+        <a
+          href="https://www.frontendmentor.io?ref=challenge"
+          class="footer__link"
+          target="_blank"
+          >Frontend Mentor</a
+        >
+        <p class="footer__developer-name">©jkDev</p>
+      </footer>
+    </div>
   </body>
 </html>
 

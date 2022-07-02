@@ -1,0 +1,19 @@
+// import styles for each section//
+@import "variables";
+// @import "header";
+// @import "content";
+// @import "footer";
+
+/* standard style reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: $veryDarkBlue;
+  font-family: $fontFamily;
+  font-size: $fontSize;
+}
