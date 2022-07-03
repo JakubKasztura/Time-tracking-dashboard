@@ -1,6 +1,7 @@
 // import styles for each section//
 @import "variables";
-// @import "header";
+@import "mixins";
+@import "header";
 // @import "content";
 // @import "footer";
 
@@ -13,7 +14,18 @@
 
 body {
   min-height: 100vh;
-  background-color: $veryDarkBlue;
+}
+.wrapper {
+  // height: 100%;
+  // color: white;
+  // background-color: $veryDarkBlue;
+  display: grid;
+  grid-auto-flow: row;
   font-family: $fontFamily;
   font-size: $fontSize;
+  // border: 2px solid red;
+  margin: 40px 20px;
+}
+.card-background {
+  background-color: $darkBlue;
 }

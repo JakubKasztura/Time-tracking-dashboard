@@ -1,0 +1,81 @@
+.menu {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  &__item:nth-child(1) {
+    grid-row: 1 / span 2;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr;
+    background-color: $blue;
+    border-radius: $borderRadius;
+    .menu__img-container {
+      grid-column: 1 / 2;
+      grid-row: 1 / span 2;
+      padding: 1.5em;
+      //   width: 150px;
+      //   height: 150px;
+      //   background-color: black;
+      .author-img {
+        width: 100%;
+        height: 100%;
+        border: 2px solid #fff;
+        border-radius: 50%;
+      }
+    }
+    .menu__info {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      font-weight: 300;
+      font-size: calc(0.8 * $fontSize);
+      color: $paleBlue;
+      //   background-color: red;
+    }
+    .menu__author {
+      //   background-color: green;
+      font-weight: 300;
+      font-size: calc(1.2 * $fontSize);
+      letter-spacing: 1px;
+      color: rgb(255, 255, 255);
+    }
+  }
+  &__nav {
+    grid-row: 3 / 4;
+    display: grid;
+    border-top-left-radius: -30px;
+    border-bottom-left-radius: $borderRadius;
+    border-bottom-right-radius: $borderRadius;
+    position: relative;
+    .menu__list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      list-style: none;
+      &-item {
+        @include flexCenter();
+        color: $paleBlue;
+      }
+    }
+  }
+  &__nav::before {
+    content: "";
+    position: absolute;
+    transform: translateY(-100%);
+    width: $borderRadius;
+    height: 50px;
+    border-bottom-left-radius: $borderRadius;
+    box-shadow: 0 $borderRadius 0 0 $darkBlue;
+    background-color: transparent;
+  }
+  &__nav::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateY(-100%);
+    width: $borderRadius;
+    height: 50px;
+    border-bottom-right-radius: $borderRadius;
+    box-shadow: 0 $borderRadius 0 0 $darkBlue;
+    background-color: transparent;
+  }
+}
