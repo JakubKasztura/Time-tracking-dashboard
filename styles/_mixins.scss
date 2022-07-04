@@ -3,3 +3,7 @@
   align-items: center;
   justify-content: center;
 }
+@mixin gridCard() {
+  display: grid;
+  grid-template-rows: 0.8fr 3fr;
+}

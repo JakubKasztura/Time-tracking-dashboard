@@ -1,0 +1,55 @@
+.dashboard {
+  grid-row: 2 / 3;
+  //   background-color: red;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  $self: &; // self set to .dashboard for easier selectors in whole content
+  &__item {
+    @include gridCard();
+    // width: 100%;
+    // height: 100%;
+    position: relative;
+    border-radius: $borderRadius;
+    overflow: hidden;
+    #{ $self }__background {
+      border-top-right-radius: $borderRadius;
+      border-top-left-radius: $borderRadius;
+      overflow: hidden;
+      #{ $self }__img-container {
+        position: absolute;
+        top: -5%;
+        right: 5%;
+        overflow: hidden;
+        z-index: 5;
+      }
+    }
+    #{ $self }__article {
+      z-index: 6;
+      border-bottom-right-radius: $borderRadius;
+      border-bottom-left-radius: $borderRadius;
+      background-color: $darkBlue;
+    }
+  }
+
+  // setting colors to each section according to design
+
+  .dashboard-work #{ $self }__background {
+    background-color: $lightOrange;
+  }
+  .dashboard-play #{ $self }__background {
+    background-color: $softBlue;
+  }
+  .dashboard-study #{ $self }__background {
+    background-color: $lightRed;
+  }
+  .dashboard-exercise #{ $self }__background {
+    background-color: $limeGreen;
+  }
+  .dashboard-social #{ $self }__background {
+    background-color: $violet;
+  }
+  .dashboard-self-care #{ $self }__background {
+    background-color: $softOrange;
+  }
+}
