@@ -7,3 +7,14 @@
   display: grid;
   grid-template-rows: 0.8fr 3fr;
 }
+@mixin downInvertedBorderRadius($side, $color, $borderSide) {
+  content: "";
+  position: absolute;
+  top: 0;
+  #{$side}: 0;
+  width: $borderRadius;
+  height: 50px;
+  border-top-#{$borderSide}-radius: $borderRadius;
+  box-shadow: 0 calc($borderRadius * -1) 0 0 $color;
+  background-color: transparent;
+}

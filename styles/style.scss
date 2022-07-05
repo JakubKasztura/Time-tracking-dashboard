@@ -1,29 +1,13 @@
 // import styles for each section//
 @import "variables";
 @import "mixins";
+@import "container";
 @import "header";
 @import "main";
-// @import "footer";
 
 /* standard style reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-body {
-  min-height: 100vh;
-  background-color: $veryDarkBlue;
-}
-.wrapper {
-  display: grid;
-  grid-template-rows: 1fr 6fr 1fr;
-  gap: 20px;
-  font-family: $fontFamily;
-  font-size: $fontSize;
-  margin: 40px 20px;
-}
-.card-background {
-  background-color: $darkBlue;
 }

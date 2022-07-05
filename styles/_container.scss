@@ -1,0 +1,14 @@
+body {
+  @include flexCenter();
+  min-height: 100vh;
+  background-color: $veryDarkBlue;
+}
+.wrapper {
+  display: grid;
+  grid-template-rows: 1fr 6fr 1fr;
+  gap: 20px;
+  width: 85%;
+  margin: 40px 0;
+  font-family: $fontFamily;
+  font-size: $fontSize;
+}

@@ -4,7 +4,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
-  $self: &; // self set to .dashboard for easier selectors in whole content
+  $dashboard: &; // self set to .dashboard for easier selectors in whole main file
   &__item {
     @include gridCard();
     // width: 100%;
@@ -12,44 +12,98 @@
     position: relative;
     border-radius: $borderRadius;
     overflow: hidden;
-    #{ $self }__background {
+    #{ $dashboard }__background {
       border-top-right-radius: $borderRadius;
       border-top-left-radius: $borderRadius;
       overflow: hidden;
-      #{ $self }__img-container {
+      #{ $dashboard }__img-container {
+        width: 20vw;
+        height: 20vw;
         position: absolute;
         top: -5%;
         right: 5%;
-        overflow: hidden;
         z-index: 5;
+        overflow: hidden;
+        #{ $dashboard}__img {
+          width: 100%;
+          height: 100%;
+        }
       }
     }
-    #{ $self }__article {
+    #{ $dashboard }__article {
+      position: relative;
       z-index: 6;
-      border-bottom-right-radius: $borderRadius;
-      border-bottom-left-radius: $borderRadius;
+      border-radius: $borderRadius;
       background-color: $darkBlue;
     }
   }
 
-  // setting colors to each section according to design
+  // setting colors and borders to each section according to design
 
-  .dashboard-work #{ $self }__background {
-    background-color: $lightOrange;
+  .dashboard-work {
+    #{ $dashboard }__background {
+      background-color: $lightOrange;
+    }
+    #{ $dashboard }__article::before {
+      @include downInvertedBorderRadius(left, $lightOrange, left);
+    }
+    #{ $dashboard }__article::after {
+      @include downInvertedBorderRadius(right, $lightOrange, right);
+    }
   }
-  .dashboard-play #{ $self }__background {
-    background-color: $softBlue;
+  .dashboard-play {
+    #{ $dashboard }__background {
+      background-color: $softBlue;
+    }
+    #{ $dashboard }__article::before {
+      @include downInvertedBorderRadius(left, $softBlue, left);
+    }
+    #{ $dashboard }__article::after {
+      @include downInvertedBorderRadius(right, $softBlue, right);
+    }
   }
-  .dashboard-study #{ $self }__background {
-    background-color: $lightRed;
+  .dashboard-study {
+    #{ $dashboard }__background {
+      background-color: $lightRed;
+    }
+    #{ $dashboard }__article::before {
+      @include downInvertedBorderRadius(left, $lightRed, left);
+    }
+    #{ $dashboard }__article::after {
+      @include downInvertedBorderRadius(right, $lightRed, right);
+    }
   }
-  .dashboard-exercise #{ $self }__background {
-    background-color: $limeGreen;
+  .dashboard-exercise {
+    #{ $dashboard }__background {
+      background-color: $limeGreen;
+    }
+    #{ $dashboard }__article::before {
+      @include downInvertedBorderRadius(left, $limeGreen, left);
+    }
+    #{ $dashboard }__article::after {
+      @include downInvertedBorderRadius(right, $limeGreen, right);
+    }
   }
-  .dashboard-social #{ $self }__background {
-    background-color: $violet;
+  .dashboard-social {
+    #{ $dashboard }__background {
+      background-color: $violet;
+    }
+    #{ $dashboard }__article::before {
+      @include downInvertedBorderRadius(left, $violet, left);
+    }
+    #{ $dashboard }__article::after {
+      @include downInvertedBorderRadius(right, $violet, right);
+    }
   }
-  .dashboard-self-care #{ $self }__background {
-    background-color: $softOrange;
+  .dashboard-self-care {
+    #{ $dashboard }__background {
+      background-color: $softOrange;
+    }
+    #{ $dashboard }__article::before {
+      @include downInvertedBorderRadius(left, $softOrange, left);
+    }
+    #{ $dashboard }__article::after {
+      @include downInvertedBorderRadius(right, $softOrange, right);
+    }
   }
 }
