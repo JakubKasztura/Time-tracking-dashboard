@@ -4,7 +4,7 @@
   grid-template-rows: 1fr 1fr 1fr;
 
   // margin: 10px 0;
-  &__item:nth-child(1) {
+  &__item {
     grid-row: 1 / span 2;
     display: grid;
     grid-template-columns: 30vw 2fr;
@@ -16,6 +16,9 @@
       grid-column: 1 / 2;
       grid-row: 1 / 3;
       margin: 1.5em;
+      // width: 70%;
+      // height: 50%;
+      aspect-ratio: 1/1;
       .author-img {
         width: 100%;
         height: 100%;
@@ -51,8 +54,12 @@
       grid-template-columns: repeat(3, 1fr);
       list-style: none;
       &-item {
-        @include flexCenter();
-        color: $paleBlue;
+        @include flexContainer(row, center);
+        color: $desaturatedBlue;
+      }
+      &-item:hover {
+        color: rgb(255, 255, 255);
+        cursor: pointer;
       }
     }
   }
@@ -77,5 +84,51 @@
     border-bottom-right-radius: $borderRadius;
     box-shadow: 0 $borderRadius 0 0 $darkBlue;
     background-color: transparent;
+  }
+}
+@media (min-width: $medium) {
+  .menu {
+    grid-row: 1 / 3;
+    // grid-template-rows: 1fr 1.3fr 1fr;
+    grid-template-columns: 1fr;
+    &__item {
+      grid-template-columns: 1fr;
+      grid-template-rows: 2fr auto 2.5fr;
+
+      .menu__img-container {
+        grid-row: 1/2;
+        width: 30%;
+        // height: 50%;
+        aspect-ratio: 1/1;
+        .author-img {
+        }
+      }
+      .menu__info {
+        grid-row: 2/3;
+        align-items: flex-start;
+        margin-left: 1.5rem;
+      }
+      .menu__author {
+        grid-row: 3/4;
+        margin: 0 1.5rem;
+        font-size: 1.5 * $fontSize;
+      }
+    }
+    &__nav {
+      grid-row: 3 / 4;
+      grid-template-columns: 1fr;
+      .menu__list {
+        grid-template-columns: none;
+        grid-auto-flow: row;
+        margin: 1rem 0;
+
+        &-item {
+          @include flexContainer(row, flex-start);
+          width: min-content;
+          font-size: 0.8 * $fontSize;
+          margin: 0.5rem 1rem;
+        }
+      }
+    }
   }
 }

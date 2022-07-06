@@ -4,6 +4,7 @@
 @import "container";
 @import "header";
 @import "main";
+@import "footer";
 
 /* standard style reset */
 * {
@@ -11,3 +12,22 @@
   padding: 0;
   box-sizing: border-box;
 }
+// Breakpoints according to Bootstrap: https://getbootstrap.com/docs/5.0/layout/breakpoints/
+
+// /* Extra Small Devices, Phones */
+// @media only screen and (min-width <576px) {}
+
+// /* Small Devices, Tablets */
+// @media only screen and (min-width >= 576px) {}
+
+// /* Medium Devices, Tablets */
+// @media only screen and (min-width >=768px) {}
+
+// /* Large Devices, Wide Screens */
+// @media only screen and (min-width >=992px) { }
+
+/* Extra Large Devices, Wide Screens */
+// @media only screen and (min-width >=1200px) {}
+
+/* Extra extra Large Devices, Wide Screens */
+// @media only screen and (min-width >=1400px) {}

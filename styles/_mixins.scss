@@ -1,7 +1,8 @@
-@mixin flexCenter() {
+@mixin flexContainer($flexDirection, $justifyContent) {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: $justifyContent;
+  flex-direction: $flexDirection;
 }
 @mixin gridCard() {
   display: grid;

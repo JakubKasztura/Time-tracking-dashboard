@@ -1,3 +1,18 @@
 .footer {
-  grid-row: 3/4;
+  width: 85%;
+  max-width: 768px;
+  margin-bottom: 5vh;
+  font-family: $fontFamily;
+  font-size: 0.7 * $fontSize;
+  text-align: center;
+  color: $paleBlue;
+  a {
+    display: inline-block;
+    text-align: center;
+    margin: 0 5px;
+  }
+  &__developer-name {
+    display: inline-block;
+    text-align: left;
+  }
 }

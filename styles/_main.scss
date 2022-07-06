@@ -107,3 +107,22 @@
     }
   }
 }
+
+@media (min-width: $medium) {
+  .dashboard {
+    grid-row: 1 / span 2;
+    grid-column: 2/3;
+    grid-template-columns: 1fr 1fr 1fr;
+    $dashboard: &;
+    &__item {
+      grid-template-columns: 1fr;
+      #{ $dashboard }__background {
+        #{ $dashboard }__img-container {
+          width: 45%;
+          height: 45%;
+          right: 10%;
+        }
+      }
+    }
+  }
+}

@@ -1,14 +1,22 @@
 body {
-  @include flexCenter();
+  @include flexContainer(column, center);
   min-height: 100vh;
   background-color: $veryDarkBlue;
 }
 .wrapper {
   display: grid;
-  grid-template-rows: 1fr 6fr 1fr;
+  grid-template-rows: 1fr 6fr;
   gap: 20px;
   width: 85%;
   margin: 40px 0;
   font-family: $fontFamily;
   font-size: $fontSize;
+}
+@media (min-width: $medium) {
+  .wrapper {
+    grid-template-rows: none;
+    grid-template-columns: 1fr 3fr;
+    width: 95%;
+    max-width: 992px;
+  }
 }
