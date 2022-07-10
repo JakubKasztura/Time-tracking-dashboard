@@ -154,5 +154,23 @@
         }
       }
     }
+    #{ $dashboard }__article {
+      grid-template-columns: 4fr 1fr;
+      gap: 0;
+      #{ $dashboard}__title {
+        margin-bottom: 20px;
+      }
+      #{ $dashboard}__data {
+        @include flexContainer(row, flex-start, flex-end);
+      }
+      #{ $dashboard}__data-info {
+        grid-row: 3/4;
+        font-size: 0.8 * $fontSize;
+      }
+
+      #{ $dashboard}__data-info {
+        @include flexContainer(row, flex-start, center);
+      }
+    }
   }
 }
