@@ -31,10 +31,40 @@
       }
     }
     #{ $dashboard }__article {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
       position: relative;
       z-index: 6;
+      padding: 1.8rem;
+      // padding-bottom: 3rem;
+      text-align: left;
       border-radius: $borderRadius;
       background-color: $darkBlue;
+
+      #{ $dashboard}__title,
+      #{ $dashboard}__data {
+        color: white;
+      }
+      #{ $dashboard}__title {
+        @include flexContainer(row, flex-start, flex-end);
+        font-size: 1.1 * $fontSize;
+        font-weight: 500;
+      }
+      #{ $dashboard}__data {
+        @include flexContainer(row, flex-start, center);
+        font-size: 2.5 * $fontSize;
+        font-weight: 300;
+        letter-spacing: 1px;
+      }
+      #{ $dashboard}__data-info {
+        font-size: $fontSize;
+        color: $desaturatedBlue;
+      }
+
+      #{ $dashboard}__data-info {
+        @include flexContainer(row, flex-end, center);
+      }
     }
   }
 

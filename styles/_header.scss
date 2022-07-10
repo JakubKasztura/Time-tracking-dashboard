@@ -54,7 +54,7 @@
       grid-template-columns: repeat(3, 1fr);
       list-style: none;
       &-item {
-        @include flexContainer(row, center);
+        @include flexContainer(row, center, center);
         color: $desaturatedBlue;
       }
       &-item:hover {
@@ -123,7 +123,7 @@
         margin: 1rem 0;
 
         &-item {
-          @include flexContainer(row, flex-start);
+          @include flexContainer(row, flex-start, center);
           width: min-content;
           font-size: 0.8 * $fontSize;
           margin: 0.5rem 1rem;

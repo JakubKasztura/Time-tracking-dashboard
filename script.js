@@ -19,18 +19,16 @@ const renderData = (data) => {
   console.log(data);
   for (let i = 0; i < data.length; i++) {
     DASHBOARD_TITLES[i].textContent = data[i].title;
-    if (data[i].title === "Work") {
-      console.log(data[i].timeframes.daily.current);
-      DASHBOARD_CURRENT_TIME_ELEMENT[i].textContent =
-        data[i].timeframes.daily.current;
-    }
+
     // daily weekly monthly - by adding and removing toggling ? active class added by css depending which info should be displayed
 
     data.forEach((dataObject, index) => {
-      DASHBOARD_CURRENT_TIME_ELEMENT[index].textContent =
-        dataObject.timeframes.daily.current;
-      DASHBOARD_PREVIOUS_TIME_ELEMENT[index].textContent =
-        dataObject.timeframes.daily.previous;
+      DASHBOARD_CURRENT_TIME_ELEMENT[
+        index
+      ].textContent = `${dataObject.timeframes.daily.current}hrs`;
+      DASHBOARD_PREVIOUS_TIME_ELEMENT[
+        index
+      ].textContent = `Last Day - ${dataObject.timeframes.daily.previous}hrs`;
 
       //   console.log(index);
     });

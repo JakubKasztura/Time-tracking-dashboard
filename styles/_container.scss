@@ -1,5 +1,5 @@
 body {
-  @include flexContainer(column, center);
+  @include flexContainer(column, center, center);
   min-height: 100vh;
   background-color: $veryDarkBlue;
 }
