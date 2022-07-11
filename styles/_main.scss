@@ -35,7 +35,7 @@
     #{ $dashboard }__article {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 0.5rem;
+      // gap: 0.5rem;
       position: relative;
       z-index: 6;
       padding: 1.8rem;
@@ -49,7 +49,7 @@
       }
       #{ $dashboard}__action {
         @include flexContainer(row, flex-end, center);
-
+        margin-bottom: 20px;
         img {
           cursor: pointer;
           transition: 0.2s;
@@ -63,6 +63,7 @@
         @include flexContainer(row, flex-start, flex-end);
         font-size: 1.1 * $fontSize;
         font-weight: 500;
+        margin-bottom: 20px;
       }
       #{ $dashboard}__data {
         @include flexContainer(row, flex-start, center);
@@ -153,14 +154,30 @@
 @media (max-width: $xXSmall) {
   .dashboard__item {
     .dashboard__article {
+      grid-template-columns: 1fr 2fr;
+      padding: 1rem;
       .dashboard__data {
-        font-size: 2 * $fontSize;
+        font-size: 1.7 * $fontSize;
       }
       .dashboard__title {
         font-size: 0.9 * $fontSize;
       }
       .dashboard__data-info {
         font-size: 0.8 * $fontSize;
+      }
+    }
+  }
+}
+@media (min-width: $xXSmall) {
+  .dashboard__item {
+    .dashboard__article {
+      grid-template-columns: 1fr 2fr;
+      .dashboard__data {
+        width: min-content;
+        font-size: 2 * $fontSize;
+      }
+      .dashboard__data-info {
+        font-size: 16px;
       }
     }
   }

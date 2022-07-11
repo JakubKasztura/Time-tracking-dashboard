@@ -57,11 +57,17 @@
       list-style: none;
       &-item {
         @include flexContainer(row, center, center);
+        width: min-content;
+        height: min-content;
+        margin: auto auto;
         color: $desaturatedBlue;
       }
       &-item:hover {
         color: rgb(255, 255, 255);
         cursor: pointer;
+      }
+      &-item_active {
+        color: rgb(255, 255, 255);
       }
     }
   }
