@@ -47,6 +47,18 @@
       #{ $dashboard}__data {
         color: white;
       }
+      #{ $dashboard}__action {
+        @include flexContainer(row, flex-end, center);
+
+        img {
+          cursor: pointer;
+          transition: 0.2s;
+        }
+        img:hover {
+          transform: scale(1.3);
+        }
+      }
+
       #{ $dashboard}__title {
         @include flexContainer(row, flex-start, flex-end);
         font-size: 1.1 * $fontSize;
@@ -172,7 +184,8 @@
     #{ $dashboard }__article {
       grid-template-columns: 4fr 1fr;
       gap: 0;
-      #{ $dashboard}__title {
+      #{ $dashboard}__title,
+      #{ $dashboard}__action {
         margin-bottom: 20px;
       }
       #{ $dashboard}__data {
