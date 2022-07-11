@@ -1,4 +1,6 @@
-const DASHBOARD_TITLES = [...document.querySelectorAll(".dashboard__title")],
+const DASHBOARD_TITLES_ELEMENT = [
+    ...document.querySelectorAll(".dashboard__title"),
+  ],
   DASHBOARD_CURRENT_TIME_ELEMENT = [
     ...document.querySelectorAll(".dashboard__data"),
   ],
@@ -18,7 +20,7 @@ const fetchData = function () {
 const renderData = (data) => {
   console.log(data);
   for (let i = 0; i < data.length; i++) {
-    DASHBOARD_TITLES[i].textContent = data[i].title;
+    DASHBOARD_TITLES_ELEMENT[i].textContent = data[i].title;
 
     // daily weekly monthly - by adding and removing toggling ? active class added by css depending which info should be displayed
 

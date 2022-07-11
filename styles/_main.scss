@@ -19,6 +19,8 @@
       #{ $dashboard }__img-container {
         width: 20vw;
         height: 20vw;
+        max-width: 100px;
+        max-height: 100px;
         position: absolute;
         top: -5%;
         right: 5%;
@@ -37,7 +39,6 @@
       position: relative;
       z-index: 6;
       padding: 1.8rem;
-      // padding-bottom: 3rem;
       text-align: left;
       border-radius: $borderRadius;
       background-color: $darkBlue;
@@ -137,7 +138,21 @@
     }
   }
 }
-
+@media (max-width: $xXSmall) {
+  .dashboard__item {
+    .dashboard__article {
+      .dashboard__data {
+        font-size: 2 * $fontSize;
+      }
+      .dashboard__title {
+        font-size: 0.9 * $fontSize;
+      }
+      .dashboard__data-info {
+        font-size: 0.8 * $fontSize;
+      }
+    }
+  }
+}
 @media (min-width: $medium) {
   .dashboard {
     grid-row: 1 / span 2;
