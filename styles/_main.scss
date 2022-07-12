@@ -50,6 +50,7 @@
       #{ $dashboard}__action {
         @include flexContainer(row, flex-end, center);
         margin-bottom: 20px;
+        z-index: 9;
         img {
           padding: 10px;
           cursor: pointer;
@@ -79,6 +80,31 @@
 
       #{ $dashboard}__data-info {
         @include flexContainer(row, flex-end, center);
+      }
+      #{ $dashboard }__extra-info {
+        @include flexContainer(row, center, center);
+        position: absolute;
+        top: 1.8rem;
+        left: 0;
+        width: 75%;
+        height: 70%;
+        transform: translate(5%);
+        padding: 10px;
+        // color: rgb(255, 255, 255);
+        color: $veryDarkBlue;
+        background-color: $lightRed;
+        border-radius: $borderRadius;
+        z-index: 10;
+      }
+      .article-background {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: $borderRadius;
+        z-index: 5;
       }
     }
   }
@@ -218,6 +244,10 @@
 
       #{ $dashboard}__data-info {
         @include flexContainer(row, flex-start, center);
+      }
+      #{ $dashboard }__extra-info {
+        top: 2.8rem;
+        width: 70%;
       }
     }
   }
