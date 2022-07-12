@@ -67,8 +67,10 @@ const renderData = function (periodInfo, period) {
     });
   }
 };
+
 const init = function () {
   fetchData();
 };
+
 init();
 MENU_LIST.addEventListener("click", changeData);
