@@ -69,9 +69,6 @@ const renderData = function (periodInfo, period) {
   }
 };
 
-const init = function () {
-  fetchData();
-};
 const showArticleExtraInfo = function (event) {
   if (event.target.tagName.toLowerCase() === "img") {
     const sectionActionButtons = [
@@ -80,25 +77,28 @@ const showArticleExtraInfo = function (event) {
     const sectionIndex = sectionActionButtons.indexOf(event.target);
     const parentElement =
       sectionActionButtons[sectionIndex].parentElement.parentElement;
-    // console.log(parentElement);
-
     const container = parentElement.querySelector(".dashboard__extra-info");
-    const articleBackground = parentElement.querySelector(
-      ".article-background"
-    );
     if (!container) {
-      createArticleExtraInfoChild(parentElement, sectionIndex);
-    } else {
-      removeArticleExtraInfoChild(parentElement, container, articleBackground);
+      createArticleExtraInfoChildren(parentElement, sectionIndex);
     }
   }
 };
-const createArticleExtraInfoChild = function (parent, sectionIndex) {
+const createArticleExtraInfoChildren = function (parent, sectionIndex) {
   const container = document.createElement("div");
+  const articleBackground = document.createElement("div");
+  const hideButtonContainer = document.createElement("div");
+  const hideLine1 = document.createElement("span");
+  const hideLine2 = document.createElement("span");
+
   container.classList.add("dashboard__extra-info");
   container.textContent = "Some additionial text";
-  const articleBackground = document.createElement("div");
   articleBackground.classList.add("article-background");
+  hideButtonContainer.classList.add("hide-button-container");
+  hideLine1.classList.add("hide-line1");
+  hideLine2.classList.add("hide-line2");
+  hideButtonContainer.appendChild(hideLine1);
+  hideButtonContainer.appendChild(hideLine2);
+
   if (sectionIndex === 0) {
     container.style.backgroundColor = "hsl(15, 100%, 70%)";
   } else if (sectionIndex === 1) {
@@ -113,15 +113,28 @@ const createArticleExtraInfoChild = function (parent, sectionIndex) {
     container.style.backgroundColor = "hsl(43,  84%, 65%)";
   }
 
-  parent.append(container, articleBackground);
+  parent.append(container, articleBackground, hideButtonContainer);
+  hideButtonContainer.addEventListener("click", () => {
+    removeArticleExtraInfoChildren(
+      parent,
+      container,
+      articleBackground,
+      hideButtonContainer
+    );
+  });
 };
-const removeArticleExtraInfoChild = function (
+const removeArticleExtraInfoChildren = function (
   parent,
   container,
-  articleBackground
+  articleBackground,
+  hideButtonContainer
 ) {
   parent.removeChild(container);
   parent.removeChild(articleBackground);
+  parent.removeChild(hideButtonContainer);
+};
+const init = function () {
+  fetchData();
 };
 init();
 MENU_LIST.addEventListener("click", changeData);
