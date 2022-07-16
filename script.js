@@ -96,8 +96,6 @@ const createArticleExtraInfoChildren = function (parent, sectionIndex) {
   hideButtonContainer.classList.add("hide-button-container");
   hideLine1.classList.add("hide-line1");
   hideLine2.classList.add("hide-line2");
-  hideButtonContainer.appendChild(hideLine1);
-  hideButtonContainer.appendChild(hideLine2);
 
   if (sectionIndex === 0) {
     container.style.backgroundColor = "hsl(15, 100%, 70%)";
@@ -112,26 +110,22 @@ const createArticleExtraInfoChildren = function (parent, sectionIndex) {
   } else if (sectionIndex === 5) {
     container.style.backgroundColor = "hsl(43,  84%, 65%)";
   }
+  hideButtonContainer.appendChild(hideLine1);
+  hideButtonContainer.appendChild(hideLine2);
+  container.appendChild(hideButtonContainer);
+  parent.append(container, articleBackground);
 
-  parent.append(container, articleBackground, hideButtonContainer);
   hideButtonContainer.addEventListener("click", () => {
-    removeArticleExtraInfoChildren(
-      parent,
-      container,
-      articleBackground,
-      hideButtonContainer
-    );
+    removeArticleExtraInfoChildren(parent, container, articleBackground);
   });
 };
 const removeArticleExtraInfoChildren = function (
   parent,
   container,
-  articleBackground,
-  hideButtonContainer
+  articleBackground
 ) {
   parent.removeChild(container);
   parent.removeChild(articleBackground);
-  parent.removeChild(hideButtonContainer);
 };
 const init = function () {
   fetchData();
