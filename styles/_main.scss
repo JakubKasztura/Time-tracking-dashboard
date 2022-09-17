@@ -1,6 +1,5 @@
 .dashboard {
   grid-row: 2 / 3;
-  //   background-color: red;
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
@@ -26,7 +25,6 @@
         top: -20%;
         right: 7.5%;
         z-index: 5;
-        // overflow: hidden;
         #{ $dashboard}__img {
           width: 100%;
           height: 100%;
