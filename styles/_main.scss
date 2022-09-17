@@ -6,8 +6,6 @@
   $dashboard: &; // self set to .dashboard for easier selectors in whole main file
   &__item {
     @include gridCard();
-    // width: 100%;
-    // height: 100%;
     position: relative;
     border-radius: $borderRadius;
     overflow: hidden;
@@ -34,7 +32,6 @@
     #{ $dashboard }__article {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      // gap: 0.5rem;
       position: relative;
       z-index: 6;
       padding: 1.8rem;
@@ -89,7 +86,6 @@
         height: 70%;
         transform: translate(5%);
         padding: 10px;
-        // color: rgb(255, 255, 255);
         color: $veryDarkBlue;
         background-color: $lightRed;
         border-radius: $borderRadius;
@@ -134,7 +130,6 @@
     }
     #{ $dashboard }__article:hover {
       background-color: hsla(235, 45%, 61%, 0.4);
-      // cursor: pointer;
     }
   }
 
